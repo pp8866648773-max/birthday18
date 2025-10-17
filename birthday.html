@@ -1,0 +1,305 @@
+<html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday ❤️</title>
+  <style>
+    :root{
+      --bg:#0f1022;
+      --card:#fff8f7;
+      --accent:#ff6b9a;
+      --muted:#6b6b7a;
+    }
+    html,body{height:100%; margin:0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; background: radial-gradient(circle at 10% 10%, #2b1a3a 0%, var(--bg) 40%); color:white; -webkit-font-smoothing:antialiased;}
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      box-sizing:border-box;
+    }
+    .card{
+      width:100%;
+      max-width:760px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:18px;
+      box-shadow: 0 10px 30px rgba(2,2,6,0.6);
+      overflow:hidden;
+      position:relative;
+      padding:24px;
+      backdrop-filter: blur(6px);
+    }
+
+    /* header row */
+    .top{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .photo{
+      width:110px;
+      height:110px;
+      border-radius:14px;
+      overflow:hidden;
+      flex:0 0 110px;
+      border:4px solid rgba(255,255,255,0.06);
+    }
+    .photo img{width:100%; height:100%; object-fit:cover; display:block;}
+    .title{
+      flex:1;
+    }
+    .title h1{margin:0;font-size:20px; letter-spacing:0.2px;}
+    .title p{margin:6px 0 0; color:var(--muted); font-size:14px;}
+
+    /* message */
+    .message{
+      margin-top:18px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:18px;
+      color:var(--card);
+    }
+    .message p{margin:0; line-height:1.6; font-size:16px}
+
+    /* action buttons */
+    .actions{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent), #ff9bbf);
+      border:none;
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow: 0 6px 18px rgba(255,107,154,0.18);
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+      color:var(--card);
+      box-shadow:none;
+    }
+
+    /* hearts animation */
+    .hearts{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .heart{
+      position:absolute;
+      width:30px;
+      height:30px;
+      transform:translateY(100vh) rotate(15deg);
+      animation: floatUp linear infinite;
+      opacity:0.9;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    }
+    .heart::before, .heart::after{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:var(--accent);
+      border-radius:50%;
+      left:0;
+      top:0;
+    }
+    .heart::before{ transform: translate(-50%,0); top:0; left: -25%;}
+    .heart::after{ transform: translate(50%,0); left:25%; top:0;}
+    .heart .lover{
+      position:absolute;
+      width:100%;
+      height:100%;
+      transform: rotate(45deg);
+      background:var(--accent);
+      border-radius:6px;
+      top:0;
+      left:0;
+    }
+
+    @keyframes floatUp{
+      0%{ transform: translateY(100vh) scale(0.6) rotate(0deg); opacity:0; }
+      5%{ opacity:0.9; }
+      50%{ opacity:0.95; }
+      100%{ transform: translateY(-20vh) scale(1.0) rotate(180deg); opacity:0; }
+    }
+
+    /* balloons */
+    .balloons{
+      position:absolute;
+      right:10px;
+      top:10px;
+      width:120px;
+      display:flex;
+      gap:8px;
+      flex-direction:column;
+      pointer-events:none;
+    }
+    .balloon{
+      width:36px;
+      height:48px;
+      border-radius:18px 18px 20px 20px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      transform-origin:center bottom;
+      animation: sway 3s ease-in-out infinite;
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    @keyframes sway{
+      0%{ transform: translateX(0) rotate(-4deg); }
+      50%{ transform: translateX(-8px) rotate(4deg); }
+      100%{ transform: translateX(0) rotate(-4deg); }
+    }
+
+    /* responsive */
+    @media (max-width:520px){
+      .top{ flex-direction:row; gap:12px;}
+      .photo{width:90px;height:90px;flex:0 0 90px;}
+      .title h1{font-size:18px;}
+      .message p{font-size:15px;}
+    }
+
+    /* small footer */
+    .footer{ margin-top:14px; color:var(--muted); font-size:13px; text-align:right }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main" aria-label="Birthday card">
+      <div class="top">
+        <div class="photo" title="आपकी फोटो">
+          <!-- फोटो यहां बदलें: photo.jpg -->
+          <img id="girlPhoto" src="C:\Users\pp886\Downloads\WhatsApp Image 2025-10-17 at 8.22.38 PM.jpeg" alt="My love">
+        </div>
+        <div class="title">
+          <h1>Happy Birthday Bachha 🎂💕</h1>
+          <p>तुम्हारे बिना मेरी हर ख़ुशी अधूरी है — आज का दिन तुम्हारे नाम।</p>
+        </div>
+        <div style="flex:0 0 48px;"></div>
+      </div>
+
+      <div class="message" id="messageBox">
+        <p>
+          मेरी प्यारी  NISHUU... ,<br><br>
+          तुम मेरी मुस्कान हो, मेरा सुकून हो। हर पल तुम्हारे साथ होना मेरे लिए सबसे बड़ी दुआ है।  
+          इस खूबसूरत दिन पर मेरी तमाम दुआएँ तुम्हारे साथ — सलामत रहो, हंसती रहो और हमेशा मेरे पास रहो।  
+          आज मैं तुम्हें एक छोटा सा आश्वासन देता हूँ — मेरी मोहब्बत हर साल, हर पल और हर सांस के साथ बढ़ती रहेगी।<br><br>
+          <strong>हैप्पी बर्थडे, मेरी जान! ❤️</strong>
+        </p>
+        <div class="actions">
+          <button class="btn" onclick="surprise()">Surprise ❤️</button>
+          <button class="btn ghost" onclick="downloadCard()">Download Image</button>
+        </div>
+      </div>
+
+      <div class="footer">From: तुम्हारा  PINUU </div>
+
+      <!-- decorative hearts -->
+      <div class="hearts" id="hearts"></div>
+
+      <!-- balloons -->
+      <div class="balloons" aria-hidden="true">
+        <div class="balloon" style="background:linear-gradient(180deg,#ffe1f0,#ff9bbf)"></div>
+        <div class="balloon" style="background:linear-gradient(180deg,#ffdccc,#ff7a9a)"></div>
+        <div class="balloon" style="background:linear-gradient(180deg,#ffd6ff,#ffa3f0)"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- optional audio (replace src with your file) -->
+  <!-- <audio id="bgm" src="happy-song.mp3" loop></audio> -->
+
+  <script>
+    // generate floating hearts
+    const heartsContainer = document.getElementById('hearts');
+    const colors = ['#ff6b9a','#ff9bbf','#ff8db5','#ffd1e6'];
+    function createHeart(i){
+      const el = document.createElement('div');
+      el.className = 'heart';
+      el.style.left = (10 + Math.random()*80) + '%';
+      el.style.width = (16 + Math.random()*40) + 'px';
+      el.style.height = el.style.width;
+      el.style.animationDuration = (6 + Math.random()*8) + 's';
+      el.style.animationDelay = (Math.random()*3) + 's';
+      el.style.transform = `translateY(100vh) scale(${0.6 + Math.random()*0.6}) rotate(${Math.random()*180}deg)`;
+      el.innerHTML = '<div class="lover" style="background:' + colors[i % colors.length] + ';"></div>';
+      heartsContainer.appendChild(el);
+      // remove eventually
+      setTimeout(()=> el.remove(), 20000);
+    }
+    // spawn hearts periodically
+    for(let i=0;i<8;i++) createHeart(i);
+    setInterval(()=> createHeart(Math.floor(Math.random()*colors.length)), 900);
+
+    // surprise button: small popup with confetti-like hearts (simple)
+    function surprise(){
+      for(let i=0;i<20;i++){
+        const h = document.createElement('div');
+        h.className = 'heart';
+        h.style.left = (40 + Math.random()*20) + '%';
+        h.style.width = (8 + Math.random()*28) + 'px';
+        h.style.height = h.style.width;
+        h.style.animationDuration = (2 + Math.random()*2) + 's';
+        h.style.animationDelay = '0s';
+        h.style.opacity = 1;
+        h.innerHTML = '<div class="lover" style="background:' + colors[Math.floor(Math.random()*colors.length)] + ';"></div>';
+        document.body.appendChild(h);
+        setTimeout(()=> h.remove(), 3000);
+      }
+      // small alert message
+      const old = document.getElementById('popup');
+      if(old) old.remove();
+      const pop = document.createElement('div');
+      pop.id = 'popup';
+      pop.textContent = 'सबसे प्यार भरी शुभकामनाएँ! 💖';
+      pop.style = 'position:fixed;left:50%;top:18%;transform:translateX(-50%);background:linear-gradient(90deg,#ff9bbf,#ff6b9a);color:white;padding:10px 16px;border-radius:10px;box-shadow:0 8px 22px rgba(0,0,0,0.4);font-weight:700;';
+      document.body.appendChild(pop);
+      setTimeout(()=> pop.remove(), 2800);
+    }
+
+    // download card as image (uses html2canvas-like approach? we will use SVG foreignObject trick)
+    // Note: this approach works in many browsers but might have cross-origin issues with external images.
+    function downloadCard(){
+      const card = document.querySelector('.card');
+      const width = card.offsetWidth;
+      const height = card.offsetHeight;
+      // create svg
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'>
+        <foreignObject width='100%' height='100%'>
+          ${new XMLSerializer().serializeToString(card)}
+        </foreignObject>
+      </svg>`;
+      const blob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'happy_birthday_card.svg';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // small friendly fallback: if photo.jpg missing, replace with placeholder
+    const img = document.getElementById('girlPhoto');
+    img.onerror = function(){
+      this.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="#ffdce6" width="100%" height="100%"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="24" fill="#6b3a4f">अपनी फोटो यहाँ लगाएँ</text></svg>');
+    }
+
+    // optional: auto play bgm on first user interaction (browsers often block autoplay)
+    document.addEventListener('click',()=>{
+      const bgm = document.getElementById('bgm');
+      if(bgm && bgm.paused){ try{ bgm.play(); } catch(e){} }
+    }, {once:true});
+  </script>
+</body>
+</html>
